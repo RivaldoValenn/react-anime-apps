@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 400vh;
+  background-color: #1c1c1c;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ul li .links-a {
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #f5f5f5;
+  opacity: 1;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+ul li .links-a:hover {
+  color: rgb(245, 158, 11);
+  opacity: 1;
+}
+
+ul li:not(:hover) .links-a {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes slideDownLink {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .links a {
+    animation: slideDownLink 0.3s ease-out;
+    animation-fill-mode: both;
+    animation-delay: calc(0.2s * var(--index));
+  }
+}
+section .container .main-content {
+  background-image: url("../src/assets/kny.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.title,
+.overview {
+  text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.6);
+}
